@@ -41,6 +41,8 @@ async def get_system_stats(sort_by="cpu"):
     }
     return stats
 
+
+
 async def send_stats(request):
     """Send system stats to WebSocket client."""
     print("Client connected")
