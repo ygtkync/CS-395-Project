@@ -22,7 +22,7 @@ async def monitor(request):
 
 async def get_system_stats(sort_by="cpu"):
 
-    """Sistem istatistiklerini topla."""
+
     processes = get_top_processes(sort_by)
     stats = {
         "cpu": psutil.cpu_percent(interval=1),
