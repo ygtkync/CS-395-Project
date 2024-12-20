@@ -24,6 +24,7 @@ async def get_system_stats(sort_by="cpu"):
 
 
     processes = get_top_processes(sort_by)
+
     stats = {
         "cpu": psutil.cpu_percent(interval=1),
         "memory": psutil.virtual_memory()._asdict(),
