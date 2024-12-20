@@ -1,12 +1,7 @@
 import asyncio
-import base64
 import json
 import pathlib
 import ssl
-import psutil
-import time
-from aiohttp import web
-import subprocess
 
 import psutil
 from aiohttp import web
@@ -18,6 +13,7 @@ async def hello(request):
 
 
 
+
 async def monitor(request):
     path = pathlib.Path(__file__).parents[0].joinpath("monitor.html")
     print("Serving {path}".format(path=path))
@@ -26,7 +22,7 @@ async def monitor(request):
 
 async def get_system_stats(sort_by="cpu"):
 
-
+    """Sistem istatistiklerini topla."""
     processes = get_top_processes(sort_by)
     stats = {
         "cpu": psutil.cpu_percent(interval=1),
@@ -41,7 +37,6 @@ async def get_system_stats(sort_by="cpu"):
         "system_logs": get_system_logs(),
     }
     return stats
-
 
 
 async def send_stats(request):
