@@ -36,7 +36,6 @@ async def get_system_stats(sort_by="cpu"):
         "last_10_users": get_last_10_users(),
         "system_logs": get_system_logs(),
     }
-
     return stats
 
 
