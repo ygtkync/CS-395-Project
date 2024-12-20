@@ -17,6 +17,7 @@ async def hello(request):
     return web.Response(text=text)
 
 
+
 async def monitor(request):
     path = pathlib.Path(__file__).parents[0].joinpath("monitor.html")
     print("Serving {path}".format(path=path))
